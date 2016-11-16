@@ -13,7 +13,7 @@ var HotelMap = React.createClass({
                lat={'41.9021988'}
                lng={'-87.6285782'}
                zoom={11}
-               loadingMessage={'Tacos soon...'}
+               loadingMessage={'Hotels soon...'}
                params={{v: '3.exp', key: 'AIzaSyB3p_xQIXsFMDGLYNEiVkgW5fsVSUOd01c'}}>
           {hotels.map(function(place) {
             return <Marker key={place.id} lat={place.lat} lng={place.long} />

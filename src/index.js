@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom')
 
 var Header = require('./components/Header')
 var NavBar = require('./components/NavBar')
+var JobList = require('./components/JobList')
 var BaseballChart = require('./components/BaseballChart')
 var MovieChart = require('./components/MovieChart')
 var SentimentChart = require('./components/SentimentChart')
@@ -20,6 +21,8 @@ var App = React.createClass({
   },
   renderMainSection: function() {
     switch (this.state.currentView) {
+      case "jobs":
+        return <JobList />
       case "taco-list":
         return <TacoList />
       case "taco-map":
@@ -42,7 +45,7 @@ var App = React.createClass({
   },
   getInitialState: function() {
     return {
-      currentView: "taco-list"
+      currentView: "jobs"
     }
   },
   render: function() {
