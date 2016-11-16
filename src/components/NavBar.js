@@ -8,7 +8,7 @@ var NavBar = React.createClass({
       <div className="sort row">
         <div className="col-sm-12">
           <ul className="nav nav-pills">
-            <NavBarItem view="jobs" title="USA.gov Jobs" currentView={this.props.currentView} viewChanged={this.props.viewChanged} />
+            <NavBarItem view="jobs" title="USAJobs.gov" currentView={this.props.currentView} viewChanged={this.props.viewChanged} />
             <NavBarItem view="taco-list" title="Taco List" currentView={this.props.currentView} viewChanged={this.props.viewChanged} />
             <NavBarItem view="taco-map" title="Taco Map" currentView={this.props.currentView} viewChanged={this.props.viewChanged} />
             <NavBarItem view="hotel-list" title="Hotel List" currentView={this.props.currentView} viewChanged={this.props.viewChanged} />

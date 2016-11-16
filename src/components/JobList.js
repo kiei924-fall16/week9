@@ -3,11 +3,15 @@ var React = require('react')
 var Job = require('./Job')
 
 var JobList = React.createClass({
-  getInitialState: function() {
-    return { jobs: [] }
+  handleChange: function(event) {
+    this.setState({
+      query: event.target.value
+    })
   },
-  componentDidMount: function() {
-    fetch("https://api.usa.gov/jobs/search.json?query=information+technology&size=100").then(function(response) {
+  handleSubmit: function(event) {
+    event.preventDefault()
+    var url = "https://api.usa.gov/jobs/search.json?query=" + this.state.query + "&size=100"
+    fetch(url).then(function(response) {
       return response.json()
     }).then(function(json) {
       this.setState({
@@ -15,9 +19,17 @@ var JobList = React.createClass({
       })
     }.bind(this))
   },
+  getInitialState: function() {
+    return { jobs: [], query: "information technology" }
+  },
   render: function() {
     return (
       <div className="col-sm-12">
+        <form className="form-inline" onSubmit={this.handleSubmit}>
+          <input type="text" className="form-control" value={this.state.query} onChange={this.handleChange} />&nbsp;
+          <button type="submit" className="btn btn-success">Find jobs!</button>
+        </form>
+        <br/>
         <ul className="list-group">
           {this.state.jobs.map(function(job) {
             return <Job key={job.id} job={job} />
