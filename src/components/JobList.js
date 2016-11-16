@@ -7,11 +7,11 @@ var JobList = React.createClass({
     return { jobs: [] }
   },
   componentDidMount: function() {
-    fetch("http://codepen.io/jobs.json").then(function(response) {
+    fetch("https://api.usa.gov/jobs/search.json?query=information+technology&size=100").then(function(response) {
       return response.json()
     }).then(function(json) {
       this.setState({
-        jobs: json.jobs
+        jobs: json
       })
     }.bind(this))
   },
@@ -20,7 +20,7 @@ var JobList = React.createClass({
       <div className="col-sm-12">
         <ul className="list-group">
           {this.state.jobs.map(function(job) {
-            return <Job key={job.hashid} job={job} />
+            return <Job key={job.id} job={job} />
           })}
         </ul>
       </div>
