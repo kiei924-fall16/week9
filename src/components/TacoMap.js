@@ -15,9 +15,6 @@ var TacoMap = React.createClass({
                zoom={11}
                loadingMessage={'Tacos soon...'}
                params={{v: '3.exp', key: 'AIzaSyB3p_xQIXsFMDGLYNEiVkgW5fsVSUOd01c'}}>
-          {tacos.map(function(place) {
-            return <Marker key={place.id} lat={place.lat} lng={place.long} />
-          })}
         </Gmaps>
       </div>
     )

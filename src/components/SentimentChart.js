@@ -31,11 +31,11 @@ var SentimentChart = React.createClass({
     var data = {
       datasets: [
         {
-          data: [positiveIphone, positiveAndroid, negativeIphone, negativeAndroid],
+          data: [],
           backgroundColor: ["#92DCE5", "#449DD1", "#F15025", "#F02D3A"],
         }
       ],
-      labels: ["Positive iPhone", "Positive Android", "Negative iPhone", "Negative Android"]
+      labels: []
     }
     var options = {
     }

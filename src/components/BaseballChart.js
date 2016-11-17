@@ -11,13 +11,13 @@ var BaseballChart = React.createClass({
     var worldSeries = []
     teams.forEach(function(team) {
       teamNames.push(team.name)
-      worldSeries.push(team.world_series / (new Date().getFullYear() - team.established))
+      worldSeries.push(team.world_series)
     })
     var data = {
       labels: teamNames,
       datasets: [
         {
-          label: 'World Series Wins per Year',
+          label: 'World Series Wins',
           backgroundColor: 'rgba(255,99,132,0.2)',
           borderColor: 'rgba(255,99,132,1)',
           borderWidth: 1,

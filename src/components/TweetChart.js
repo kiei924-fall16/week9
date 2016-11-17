@@ -13,25 +13,7 @@ var TweetChart = React.createClass({
     var iphoneTweets = tweets.reduce(function(count, tweet) {
       return count + (tweet.statusSource === 'iphone')
     }, 0)
-    var data = {
-      labels: [
-        "iPhone",
-        "Android"
-      ],
-      datasets: [
-        {
-          data: [iphoneTweets, androidTweets],
-          backgroundColor: [
-              "#36A2EB",
-              "#FF6384",
-          ],
-          hoverBackgroundColor: [
-              "#36A2EB",
-              "#FF6384",
-          ]
-        }
-      ]
-    }
+    var data = {}
     var options = {}
     return (
       <div className="map col-sm-12">

@@ -17,7 +17,9 @@ var JobList = React.createClass({
       this.setState({
         jobs: json
       })
-    }.bind(this))
+    }.bind(this)).catch(function(ex) {
+      console.log("Oh well.")
+    })
   },
   getInitialState: function() {
     return { jobs: [], query: "information technology" }

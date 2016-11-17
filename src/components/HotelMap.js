@@ -15,9 +15,6 @@ var HotelMap = React.createClass({
                zoom={11}
                loadingMessage={'Hotels soon...'}
                params={{v: '3.exp', key: 'AIzaSyB3p_xQIXsFMDGLYNEiVkgW5fsVSUOd01c'}}>
-          {hotels.map(function(place) {
-            return <Marker key={place.id} lat={place.lat} lng={place.long} />
-          })}
         </Gmaps>
       </div>
     )

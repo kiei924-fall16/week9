@@ -8,11 +8,7 @@ var HotelList = React.createClass({
   render: function() {
     return (
       <div className="col-sm-12">
-        <ul className="list-group">
-          {hotels.map(function(place) {
-            return <Place key={place.id} place={place} />
-          })}
-        </ul>
+        <h1>This would be an awfully good place for a list of hotels.</h1>
       </div>
     )
   }
